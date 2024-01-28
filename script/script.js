@@ -127,7 +127,13 @@ function resizeImages() {
   const numberOfFiles = formData.getAll("files").length;
   console.log("Number of files:", numberOfFiles);
 
-  fetch("/api/resizeimage", {
+  api_endpoint =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+      ? "http://127.0.0.1:5001/api/resizeimage"
+      : "/api/resizeimage";
+
+  fetch(api_endpoint, {
     method: "POST",
     body: formData,
   })
