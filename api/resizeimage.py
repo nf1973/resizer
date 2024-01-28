@@ -7,7 +7,7 @@ import io
 app = Flask(__name__)
 CORS(app, resources={r"/api/resizeimage": {"origins": "*"}})
 
-@app.route('/resizeimage', methods=['POST'])
+@app.route('/api/resizeimage', methods=['POST'])
 def resize_image():
 
     files = request.files.getlist('files')
