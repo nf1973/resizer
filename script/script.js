@@ -127,7 +127,7 @@ function resizeImages() {
   const numberOfFiles = formData.getAll("files").length;
   console.log("Number of files:", numberOfFiles);
 
-  fetch("/resizeimage", {
+  fetch("/api/resizeimage", {
     method: "POST",
     body: formData,
   })
