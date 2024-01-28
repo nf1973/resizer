@@ -38,8 +38,6 @@ function loadSliderValues() {
   }
 }
 
-//////////////
-
 // Handler for the file upload drop zone
 const fileInput = document.getElementById("fileInput");
 
@@ -96,12 +94,8 @@ function handleDrop(event) {
   updateDropMessage(fileList);
 }
 
-// Function to update the drop message with the selected file names
 function updateDropMessage(fileList) {
-  dropMessage.textContent =
-    fileList.length > 1
-      ? `${fileList.length} files selected`
-      : fileList[0].name;
+  dropMessage.textContent = `${fileList.length} files selected`;
 }
 
 // Function to send the files to the backend and download the returned file
@@ -133,7 +127,7 @@ function resizeImages() {
   const numberOfFiles = formData.getAll("files").length;
   console.log("Number of files:", numberOfFiles);
 
-  fetch("http://localhost:5001/resizeimage", {
+  fetch("/resizeimage", {
     method: "POST",
     body: formData,
   })
