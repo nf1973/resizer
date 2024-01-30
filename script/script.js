@@ -130,8 +130,8 @@ function resizeImages() {
   api_endpoint =
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1"
-      ? "http://127.0.0.1:5001/api/resizeimage"
-      : "/api/resizeimage";
+      ? "https://resizer-api.sn1316.com/api/resizeimage" //can easily be changed for testing
+      : "https://resizer-api.sn1316.com/api/resizeimage";
 
   fetch(api_endpoint, {
     method: "POST",
